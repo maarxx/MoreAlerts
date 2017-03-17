@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
+    <Compile Include="Alert_SleptInCold.cs" />
     <Compile Include="Alert_SleptInHeat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
