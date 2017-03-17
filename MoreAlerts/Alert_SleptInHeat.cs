@@ -12,8 +12,8 @@ namespace MoreAlerts
 
         public Alert_SleptInHeat()
         {
-            defaultLabel = "Uncomfortably Hot";
-            defaultExplanation = "Colonist is uncomfortably hot.";
+            defaultLabel = "Slept in Heat";
+            defaultExplanation = "Colonist slept in heat.";
         }
 
         protected override ThoughtDef Thought => ThoughtDefOf.SleptInHeat;
