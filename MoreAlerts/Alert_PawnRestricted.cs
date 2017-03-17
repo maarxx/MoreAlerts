@@ -53,7 +53,7 @@ namespace MoreAlerts
                 restrictedPawns = new List<Pawn>();
                 foreach (Pawn p in PawnsFinder.AllMaps_FreeColonistsSpawned)
                 {
-                    Area_Allowed area = (Area_Allowed) p.playerSettings.AreaRestriction;
+                    Area area = p.playerSettings.AreaRestriction;
                     if (area != null && area.Label != "Psyche" && area.Label != "ToxicH")
                     {
                         restrictedPawns.Add(p);
