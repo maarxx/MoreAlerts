@@ -54,9 +54,18 @@ namespace MoreAlerts
                 huntingPawns = new List<Pawn>();
                 foreach (Pawn p in PawnsFinder.AllMaps_Spawned)
                 {
-                    if ((p.jobs != null) && (p.jobs.curJob != null) && (p.jobs.curJob.targetA != null) && (p.jobs.curJob.def.reportString == "Melee attacking TargetA.") && (p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer))
+                    //if ((p.jobs != null) && (p.jobs.curJob != null) && (p.jobs.curJob.targetA != null) && (p.jobs.curJob.def.reportString == "Melee attacking TargetA.") && (p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer))
+                    if ((p.jobs != null) && (p.jobs.curJob != null) && (p.jobs.curJob.targetA != null) && (p.jobs.curJob.def.Equals(JobDefOf.AttackMelee)) && (p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer))
                     {
+                        //Log.Message(p.jobs.curJob.def.reportString);
                         huntingPawns.Add(p);
+                    }
+                    else
+                    {
+                        if (p.MentalState.def.Equals(MentalStateDefOf.Manhunter) || p.MentalState.def.Equals(MentalStateDefOf.ManhunterPermanent))
+                        {
+                            huntingPawns.Add(p);
+                        }
                     }
                 }
                 lastTick = curTick;
