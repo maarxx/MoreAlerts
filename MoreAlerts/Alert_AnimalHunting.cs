@@ -8,31 +8,31 @@ using Verse;
 namespace MoreAlerts
 {
 
-    class Alert_PawnHunting : Alert_Critical
+    class Alert_AnimalHunting : Alert_Critical
     {
 
-        List<Pawn> huntingPawns;
+        List<Pawn> huntingAnimals;
 
         int lastTick;
 
-        public Alert_PawnHunting()
+        public Alert_AnimalHunting()
         {
-            this.defaultLabel = "X hunting pawns";
-            this.defaultExplanation = "Some pawns are hunting!";
-            this.huntingPawns = new List<Pawn>();
+            this.defaultLabel = "X animals hunting";
+            this.defaultExplanation = "Some animals are hunting you!";
+            this.huntingAnimals = new List<Pawn>();
             this.lastTick = 0;
         }
 
         public override AlertReport GetReport()
         {
             GetHuntingPawns();
-            return this.huntingPawns.FirstOrDefault();
+            return this.huntingAnimals.FirstOrDefault();
         }
 
         public override string GetLabel()
         {
             GetHuntingPawns();
-            return "" + huntingPawns.Count() + " hunting pawns";
+            return "" + huntingAnimals.Count() + " animals hunting";
         }
 
         public override string GetExplanation()
@@ -50,18 +50,18 @@ namespace MoreAlerts
             }
             else
             {
-                huntingPawns = new List<Pawn>();
+                huntingAnimals = new List<Pawn>();
                 foreach (Pawn p in PawnsFinder.AllMaps_Spawned)
                 {
                     if ( p.MentalStateDef != null && ( p.MentalStateDef.Equals(MentalStateDefOf.Manhunter) || p.MentalStateDef.Equals(MentalStateDefOf.ManhunterPermanent) ) )
                     {
-                        huntingPawns.Add(p);
+                        huntingAnimals.Add(p);
                     }
                     else
                     {
                         if (p.jobs != null && p.jobs.curJob != null && p.jobs.curJob.def != null && p.jobs.curJob.def.Equals(JobDefOf.PredatorHunt) && p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer)
                         {
-                            huntingPawns.Add(p);
+                            huntingAnimals.Add(p);
                         }
                     }
                 }
