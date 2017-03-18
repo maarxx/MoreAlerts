@@ -8,7 +8,7 @@ using Verse;
 namespace MoreAlerts
 {
 
-    class Alert_PawnHunting : Alert
+    class Alert_PawnHunting : Alert_Critical
     {
 
         List<Pawn> huntingPawns;
@@ -43,7 +43,6 @@ namespace MoreAlerts
 
         private void GetHuntingPawns()
         {
-
             int curTick = Find.TickManager.TicksGame;
             if (lastTick + 10 > curTick)
             {
@@ -54,15 +53,13 @@ namespace MoreAlerts
                 huntingPawns = new List<Pawn>();
                 foreach (Pawn p in PawnsFinder.AllMaps_Spawned)
                 {
-                    //if ((p.jobs != null) && (p.jobs.curJob != null) && (p.jobs.curJob.targetA != null) && (p.jobs.curJob.def.reportString == "Melee attacking TargetA.") && (p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer))
-                    if ((p.jobs != null) && (p.jobs.curJob != null) && (p.jobs.curJob.targetA != null) && (p.jobs.curJob.def.Equals(JobDefOf.AttackMelee)) && (p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer))
+                    if ( p.MentalStateDef != null && ( p.MentalStateDef.Equals(MentalStateDefOf.Manhunter) || p.MentalStateDef.Equals(MentalStateDefOf.ManhunterPermanent) ) )
                     {
-                        //Log.Message(p.jobs.curJob.def.reportString);
                         huntingPawns.Add(p);
                     }
                     else
                     {
-                        if (p.MentalState.def.Equals(MentalStateDefOf.Manhunter) || p.MentalState.def.Equals(MentalStateDefOf.ManhunterPermanent))
+                        if (p.jobs != null && p.jobs.curJob != null && p.jobs.curJob.def != null && p.jobs.curJob.def.Equals(JobDefOf.PredatorHunt) && p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer)
                         {
                             huntingPawns.Add(p);
                         }
@@ -70,7 +67,6 @@ namespace MoreAlerts
                 }
                 lastTick = curTick;
             }
-
         }
 
     }
