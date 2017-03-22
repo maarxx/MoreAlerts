@@ -20,15 +20,21 @@ The mod provides more alerts, which are those lines on the right-hand side like 
 
 Some of the new alerts include:
 
+
+
 #### Slept in Heat
 #### Slept in Cold
 
 These alerts follow the moodlet / thought.
 
+
+
 #### Pawns are Hot
 #### Pawns are Cold
 
 These alerts literally follow whether the pawn's current temperature is outside their comfort zone.
+
+
 
 #### Pawn is Restricted
 
@@ -36,11 +42,15 @@ This alert follows whether the Pawn's current Allowed Area is something other th
 
 It also ignores zones named "Psyche" or "ToxicH" for compatibility with my other mod [SmarterScheduling](https://github.com/maarxx/SmarterScheduling).
 
+
+
 #### Animal Hunting
 
 This alert follows whether a wild animal is hunting one of your faction members (human or animal), either because it is a hungry predator or because it has gone manhunter.
 
 During manhunter events, it also conveniently tells you exactly how many manhunter animals are left.
+
+
 
 # Specific Additional Features
 
