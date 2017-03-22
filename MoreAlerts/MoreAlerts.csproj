@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_NotRecruitingPrisoner.cs" />
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />
