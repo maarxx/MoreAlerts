@@ -25,8 +25,8 @@ Some of the new alerts include:
 
 These alerts follow the moodlet / thought.
 
-* # Pawns are Hot
-* # Pawns are Cold
+* Pawns are Hot
+* Pawns are Cold
 
 These alerts literally follow whether the pawn's current temperature is outside their comfort zone.
 
