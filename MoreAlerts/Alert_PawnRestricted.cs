@@ -7,61 +7,27 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_PawnRestricted : Alert
+    class Alert_PawnRestricted : Alert_Custom_FreeColonistsSpawned
     {
-
-        List<Pawn> restrictedPawns;
-
-        int lastTick;
 
         public Alert_PawnRestricted()
         {
-            this.defaultLabel = "X restricted pawns";
+            this.defaultLabel = "restricted pawns";
             this.defaultExplanation = "Some pawns are restricted!";
-            this.restrictedPawns = new List<Pawn>();
-            this.lastTick = 0;
         }
 
-        public override AlertReport GetReport()
+        protected override bool isPawnAffected(Pawn p)
         {
-            GetRestrictedPawns();
-            return this.restrictedPawns.FirstOrDefault();
-        }
-
-        public override string GetLabel()
-        {
-            GetRestrictedPawns();
-            return "" + restrictedPawns.Count() + " restricted pawns";
-        }
-
-        public override string GetExplanation()
-        {
-            GetRestrictedPawns();
-            return base.GetExplanation();
-        }
-
-        private void GetRestrictedPawns()
-        {
-
-            int curTick = Find.TickManager.TicksGame;
-            if (lastTick + 10 > curTick)
+            Area area = p.playerSettings.AreaRestriction;
+            if (area != null && area.Label != "Psyche" && area.Label != "ToxicH")
             {
-                return;
+                return true;
             }
             else
             {
-                restrictedPawns = new List<Pawn>();
-                foreach (Pawn p in PawnsFinder.AllMaps_FreeColonistsSpawned)
-                {
-                    Area area = p.playerSettings.AreaRestriction;
-                    if (area != null && area.Label != "Psyche" && area.Label != "ToxicH")
-                    {
-                        restrictedPawns.Add(p);
-                    }
-                }
-                lastTick = curTick;
+                return false;
             }
-
         }
+
     }
 }
