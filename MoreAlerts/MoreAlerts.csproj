@@ -48,6 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_Custom.cs" />
+    <Compile Include="Alert_Custom_FreeColonistOrPrisonerSpawned.cs" />
+    <Compile Include="Alert_Custom_FreeColonistsSpawned.cs" />
+    <Compile Include="Alert_Custom_PrisonerSpawned.cs" />
+    <Compile Include="Alert_Custom_Spawned.cs" />
     <Compile Include="Alert_ImmunityDeath.cs" />
     <Compile Include="Alert_NotRecruitingPrisoner.cs" />
     <Compile Include="Alert_PawnCold.cs" />

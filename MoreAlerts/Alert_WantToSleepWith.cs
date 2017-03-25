@@ -7,62 +7,26 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_WantToSleepWith : Alert
+    class Alert_WantToSleepWith : Alert_Custom_FreeColonistsSpawned
     {
-
-        List<Pawn> wantToSleepWith;
-
-        int lastTick;
 
         public Alert_WantToSleepWith()
         {
-            this.defaultLabel = "X want to sleep with";
+            this.defaultLabel = "want to sleep with";
             this.defaultExplanation = "Some colonists want to sleep with others.";
-            this.wantToSleepWith = new List<Pawn>();
-            this.lastTick = 0;
         }
 
-        public override AlertReport GetReport()
+        protected override bool isPawnAffected(Pawn p)
         {
-            GetColonistsWantToSleepWith();
-            return this.wantToSleepWith.FirstOrDefault();
-        }
-
-        public override string GetLabel()
-        {
-            GetColonistsWantToSleepWith();
-            return "" + wantToSleepWith.Count() + " want to sleep with";
-        }
-
-        public override string GetExplanation()
-        {
-            GetColonistsWantToSleepWith();
-            return base.GetExplanation();
-        }
-
-        private void GetColonistsWantToSleepWith()
-        {
-
-            int curTick = Find.TickManager.TicksGame;
-            if (lastTick + 10 > curTick)
+            foreach (Thought_Situational ts in p.needs.mood.thoughts.situational.GetSituationalThoughtsAffectingMood())
             {
-                return;
-            }
-            else
-            {
-                wantToSleepWith = new List<Pawn>();
-                foreach (Pawn p in PawnsFinder.AllMaps_FreeColonistsSpawned)
+                if (ts is Thought_WantToSleepWithSpouseOrLover)
                 {
-                    foreach (Thought_Situational ts in p.needs.mood.thoughts.situational.GetSituationalThoughtsAffectingMood())
-                    {
-                        if (ts is Thought_WantToSleepWithSpouseOrLover)
-                        {
-                            wantToSleepWith.Add(p);
-                        }
-                    }
+                    return true;
                 }
-                lastTick = curTick;
             }
+            return false;
         }
+
     }
 }
