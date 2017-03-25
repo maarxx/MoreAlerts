@@ -54,6 +54,7 @@
     <Compile Include="Alert_PawnRestricted.cs" />
     <Compile Include="Alert_SleptInCold.cs" />
     <Compile Include="Alert_SleptInHeat.cs" />
+    <Compile Include="Alert_WantToSleepWith.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
