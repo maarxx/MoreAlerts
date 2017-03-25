@@ -14,6 +14,8 @@ namespace MoreAlerts
         protected List<Thing> affectedThings = new List<Thing>();
         protected int lastTick = 0;
 
+        private int lastActiveFrame = -1;
+
         public override AlertReport GetReport()
         {
             GetAffectedThings();
@@ -43,6 +45,7 @@ namespace MoreAlerts
 
         public override void AlertActiveUpdate()
         {
+            /*
             if (this.defaultPriority == AlertPriority.Critical)
             {
                 (this as Alert_Critical).AlertActiveUpdate();
@@ -51,11 +54,28 @@ namespace MoreAlerts
             {
                 (this as Alert).AlertActiveUpdate();
             }
+            */
+
+            if (this.defaultPriority == AlertPriority.Critical)
+            {
+                if (this.lastActiveFrame < Time.frameCount - 1)
+                {
+                    Messages.Message("MessageCriticalAlert".Translate(new object[]
+                    {
+                    this.GetLabel()
+                    }), this.GetReport().culprit, MessageSound.SeriousAlert);
+                }
+                this.lastActiveFrame = Time.frameCount;
+            }
+            else
+            {
+                // Nothing.
+            }
+
         }
 
         protected override Color BGColor
         {
-            // C# won't let us do this. :(
             /*
             get
             {
@@ -70,7 +90,6 @@ namespace MoreAlerts
             }
             */
 
-            // So we have to do this instead, copy/paste code from parents.
             get
             {
                 if (this.defaultPriority == AlertPriority.Critical)
