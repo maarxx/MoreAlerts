@@ -13,6 +13,7 @@ namespace MoreAlerts
 
         public Alert_AnimalHunting()
         {
+            this.defaultPriority = AlertPriority.Critical;
             this.defaultLabel = "animals hunting";
             this.defaultExplanation = "Some animals are hunting you!";
         }
