@@ -42,6 +42,10 @@ This alert follows whether a wild animal is hunting one of your faction members 
 
 During manhunter events, it also conveniently tells you exactly how many manhunter animals are left.
 
+### Want to Sleep With
+
+This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
+
 # Specific Additional Features
 
 None, as of yet.
