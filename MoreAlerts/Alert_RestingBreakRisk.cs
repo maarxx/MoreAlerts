@@ -19,7 +19,7 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.CurJob.def.reportString == "lying down." && !(p.needs.rest.GUIChangeArrow > 0) )
+            if (p.CurJob.def.reportString == "lying down." && !(p.needs.rest.GUIChangeArrow > 0) && p.needs.rest.CurLevel > 75)
             {
                 if (p.needs.mood.CurLevel < p.mindState.mentalBreaker.BreakThresholdMinor)
                 {
