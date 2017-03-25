@@ -46,6 +46,10 @@ During manhunter events, it also conveniently tells you exactly how many manhunt
 
 This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
 
+### Immunity Death
+
+This alert looks for pawns with diseases with Immunity percentages and Severity percentages. It does rough math to approximate which will hit 100% first, and throws this alert for any pawn which might die of 100% severity before 100% immunity. The math is conservative and errs on the side of assuming death.
+
 # Specific Additional Features
 
 None, as of yet.
