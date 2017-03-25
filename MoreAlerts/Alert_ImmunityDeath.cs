@@ -12,6 +12,7 @@ namespace MoreAlerts
 
         public Alert_ImmunityDeath()
         {
+            this.defaultPriority = AlertPriority.High;
             this.defaultLabel = "immunity death";
             this.defaultExplanation = "Some colonists projected for immunity death.";
         }
