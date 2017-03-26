@@ -19,7 +19,7 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.Faction.def.Equals(FactionDefOf.Mechanoid))
+            if (p.ToString().Contains("Mechanoid") && !p.Downed)
             {
                 return true;
             }
