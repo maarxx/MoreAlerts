@@ -7,19 +7,19 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_PawnRestricted : Alert_Custom_FreeColonistsSpawned
+    class Alert_Mechanoids : Alert_Custom_Spawned
     {
 
-        public Alert_PawnRestricted()
+        public Alert_Mechanoids()
         {
-            this.defaultLabel = "restricted pawns";
-            this.defaultExplanation = "Some pawns are restricted!";
+            this.defaultPriority = AlertPriority.Critical;
+            this.defaultLabel = "mechanoids";
+            this.defaultExplanation = "There are mechanoids!";
         }
 
         protected override bool isPawnAffected(Pawn p)
         {
-            Area area = p.playerSettings.AreaRestriction;
-            if (area != null && area.Label != "Psyche" && area.Label != "ToxicH")
+            if (p.ToString().Contains("Mechanoid") && !p.Downed)
             {
                 return true;
             }
@@ -28,6 +28,5 @@ namespace MoreAlerts
                 return false;
             }
         }
-
     }
 }

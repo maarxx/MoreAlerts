@@ -7,62 +7,29 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_PawnHot : Alert
+    class Alert_PawnHot : Alert_Custom_FreeColonistsAndPrisonersSpawned
     {
-
-        List<Pawn> hotPawns;
-
-        int lastTick;
 
         public Alert_PawnHot()
         {
-            this.defaultLabel = "X hot pawns";
+            this.defaultLabel = "hot pawns";
             this.defaultExplanation = "Some pawns are hot!";
-            this.hotPawns = new List<Pawn>();
-            this.lastTick = 0;
         }
 
-        public override AlertReport GetReport()
+        protected override bool isPawnAffected(Pawn p)
         {
-            GetHotPawns();
-            return this.hotPawns.FirstOrDefault();
-        }
-
-        public override string GetLabel()
-        {
-            GetHotPawns();
-            return "" + hotPawns.Count() + " hot pawns";
-        }
-
-        public override string GetExplanation()
-        {
-            GetHotPawns();
-            return base.GetExplanation();
-        }
-
-        private void GetHotPawns()
-        {
-
-            int curTick = Find.TickManager.TicksGame;
-            if (lastTick + 10 > curTick)
+            float maxComfortTemp = p.ComfortableTemperatureRange().max;
+            float curTemp = 999;
+            GenTemperature.TryGetAirTemperatureAroundThing(p, out curTemp);
+            if (curTemp > maxComfortTemp)
             {
-                return;
+                return true;
             }
             else
             {
-                hotPawns = new List<Pawn>();
-                foreach (Pawn p in PawnsFinder.AllMaps_FreeColonistsAndPrisonersSpawned)
-                {
-                    float maxComfortTemp = p.ComfortableTemperatureRange().max;
-                    float curTemp = -999;
-                    GenTemperature.TryGetAirTemperatureAroundThing(p, out curTemp);
-                    if (curTemp > maxComfortTemp)
-                    {
-                        hotPawns.Add(p);
-                    }
-                }
+                return false;
             }
-            
         }
+
     }
 }

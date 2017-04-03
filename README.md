@@ -42,6 +42,36 @@ This alert follows whether a wild animal is hunting one of your faction members 
 
 During manhunter events, it also conveniently tells you exactly how many manhunter animals are left.
 
+### Mechanoids
+
+This alert follows whether there are any mechanoids on your map, and how many.
+
+### Want to Sleep With
+
+This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
+
+### Immunity Death
+
+This alert looks for pawns with diseases with Immunity percentages and Severity percentages. It does rough math to approximate which will hit 100% first, and throws this alert for any pawn which might die of 100% severity before 100% immunity. The math is conservative and errs on the side of assuming death.
+
+### Not Recruiting Prisoner
+
+This alert tracks whether you have a prisoner lingering in your prison who is set to either "No Interaction" or "Chat".
+
+### Rest Until Healed
+
+This alert helps you track whether you have any colonists you have instructed to prioritize "Rest Until Healed".
+
+### Resting Break Risk
+
+Pawns that are awake, and mobile, tend to take care of their Mood and Joy.
+
+Pawns that are asleep have frozen Mood. They are no danger, but default alert "Break Risk" includes sleeping pawns, and so most players ignore this alert.
+
+But pawns that are resting in bed for medical reasons, but not asleep, have nasty tendency to mental break, especially if they have overflowed hospital into awful bedrooms.
+
+This alert tracks pawns that are resting, in bed, but not sleeping, who are break risks.
+
 # Specific Additional Features
 
 None, as of yet.
