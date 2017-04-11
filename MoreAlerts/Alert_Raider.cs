@@ -19,7 +19,7 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.RaceProps.Humanlike && p.Faction.HostileTo(Faction.OfPlayer))
+            if (p.RaceProps.Humanlike && p.Faction.HostileTo(Faction.OfPlayer) && !p.IsPrisonerOfColony)
             {
                 return true;
             }
