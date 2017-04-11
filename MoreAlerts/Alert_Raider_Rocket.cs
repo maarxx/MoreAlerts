@@ -21,7 +21,7 @@ namespace MoreAlerts
         {
             if (p.RaceProps.Humanlike && p.Faction.HostileTo(Faction.OfPlayer))
             {
-                if (p.equipment.Primary.def.Equals(ThingDef.Named("Gun_DoomsdayRocket")) || p.equipment.Primary.def.Equals(ThingDef.Named("Gun_TripleRocket")))
+                if (p.equipment != null && p.equipment.Primary != null && ( p.equipment.Primary.def.Equals(ThingDef.Named("Gun_DoomsdayRocket")) || p.equipment.Primary.def.Equals(ThingDef.Named("Gun_TripleRocket")) ) )
                 {
                     return true;
                 }
