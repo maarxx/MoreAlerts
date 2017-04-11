@@ -62,6 +62,7 @@
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />
+    <Compile Include="Alert_PrisonerEscaping.cs" />
     <Compile Include="Alert_Raider.cs" />
     <Compile Include="Alert_Raider_Rocket.cs" />
     <Compile Include="Alert_RestingBreakRisk.cs" />
