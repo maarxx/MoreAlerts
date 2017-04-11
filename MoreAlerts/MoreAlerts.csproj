@@ -53,6 +53,8 @@
     <Compile Include="Alert_Custom_FreeColonistsSpawned.cs" />
     <Compile Include="Alert_Custom_PrisonerSpawned.cs" />
     <Compile Include="Alert_Custom_Spawned.cs" />
+    <Compile Include="Alert_DoorBlockedOpen.cs" />
+    <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_ImmunityDeath.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Mechanoids.cs" />
