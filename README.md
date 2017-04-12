@@ -20,15 +20,20 @@ The mod provides more alerts, which are those lines on the right-hand side like 
 
 Some of the new alerts include:
 
-### Slept in Heat
-### Slept in Cold
-
-These alerts follow the moodlet / thought.
-
 ### Pawns are Hot
 ### Pawns are Cold
 
-These alerts literally follow whether the pawn's current temperature is outside their comfort zone.
+These alerts literally follow whether the pawn's current instantaneous temperature is outside their comfort zone.
+
+### Slept in Heat
+### Slept in Cold
+
+These alerts follow the moodlet / thought, so this will persist as long as the moodlet / thought persists, which means it might linger for a little while longer after you fix the issue.
+
+### Door Held Open
+### Door Blocked Open
+
+These are two separate alerts, which, respectively, keep track of Doors which are marked as "Hold Open", and doors which are blocked open, probably because somebody dropped an item in the doorway.
 
 ### Pawn is Restricted
 
@@ -44,19 +49,31 @@ During manhunter events, it also conveniently tells you exactly how many manhunt
 
 ### Mechanoids
 
-This alert follows whether there are any mechanoids on your map, and how many.
+This alert follows whether there are any mechanoids on your map, and exactly how many.
 
-### Want to Sleep With
+### Raiders
 
-This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
+This alert follows whether there are any hostile humanoid raiders on your map, and exactly how many.
 
-### Immunity Death
+### Rockets
 
-This alert looks for pawns with diseases with Immunity percentages and Severity percentages. It does rough math to approximate which will hit 100% first, and throws this alert for any pawn which might die of 100% severity before 100% immunity. The math is conservative and errs on the side of assuming death.
+This alert follows whether there are any hostile humanoids with rocket launchers (or prisoners, oops), and exactly how many.
+
+### Escaping Prisoners
+
+This alert follows whether there any any escaping prisoners on your map, and how many.
+
+This could be due to a Prison Break event, or just because some idiot left the door open.
 
 ### Not Recruiting Prisoner
 
 This alert tracks whether you have a prisoner lingering in your prison who is set to either "No Interaction" or "Chat".
+
+### Immunity Death
+
+This alert looks for pawns with diseases with Immunity percentages and Severity percentages. It does rough math to approximate which will hit 100% first, and throws this alert for any pawn which might die of 100% severity before 100% immunity.
+
+The math is conservative and errs on the side of assuming death. You need like a +10% lead or more for the alert to fall off. It lists everybody you should keep an eye on.
 
 ### Rest Until Healed
 
@@ -68,9 +85,15 @@ Pawns that are awake, and mobile, tend to take care of their Mood and Joy.
 
 Pawns that are asleep have frozen Mood. They are no danger, but default alert "Break Risk" includes sleeping pawns, and so most players ignore this alert.
 
-But pawns that are resting in bed for medical reasons, but not asleep, have nasty tendency to mental break, especially if they have overflowed hospital into awful bedrooms.
+But pawns that are resting in bed for medical reasons, but not asleep, have nasty tendency to mental break, especially if they have overflowed your beautiful hospital into your awful bedrooms.
 
-This alert tracks pawns that are resting, in bed, but not sleeping, who are break risks.
+This alert tracks pawns that are resting, in bed, but not sleeping, who are break risks. Very useful.
+
+### Want to Sleep With
+
+This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
+
+I like to know this because it is an easy thing to fix.
 
 # Specific Additional Features
 

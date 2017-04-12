@@ -53,6 +53,8 @@
     <Compile Include="Alert_Custom_FreeColonistsSpawned.cs" />
     <Compile Include="Alert_Custom_PrisonerSpawned.cs" />
     <Compile Include="Alert_Custom_Spawned.cs" />
+    <Compile Include="Alert_DoorBlockedOpen.cs" />
+    <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_ImmunityDeath.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Mechanoids.cs" />
@@ -60,6 +62,9 @@
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />
+    <Compile Include="Alert_PrisonerEscaping.cs" />
+    <Compile Include="Alert_Raider.cs" />
+    <Compile Include="Alert_Raider_Rocket.cs" />
     <Compile Include="Alert_RestingBreakRisk.cs" />
     <Compile Include="Alert_RestUntilHealed.cs" />
     <Compile Include="Alert_SleptInCold.cs" />
