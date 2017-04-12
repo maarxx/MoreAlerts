@@ -24,7 +24,15 @@ namespace MoreAlerts
             {
                 return true;
             }
-            else if (p.jobs != null && p.jobs.curJob != null && p.jobs.curJob.def != null && p.jobs.curJob.def.Equals(JobDefOf.PredatorHunt) && p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer)
+            else if (
+                    p.jobs != null
+                    && p.jobs.curJob != null
+                    && p.jobs.curJob.def != null
+                    && p.jobs.curJob.def.Equals(JobDefOf.PredatorHunt)
+                    && p.jobs.curJob.targetA != null
+                    && p.jobs.curJob.targetA.Thing != null
+                    && p.jobs.curJob.targetA.Thing.Faction == Faction.OfPlayer
+                )
             {
                 return true;
             }
