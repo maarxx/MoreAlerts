@@ -57,7 +57,7 @@ This alert follows whether there are any hostile humanoid raiders on your map, a
 
 ### Rockets
 
-This alert follows whether there are any hostile humanoids with rocket launchers (or escaped prisoners, eep), and exactly how many.
+This alert follows whether there are any hostile humanoids with rocket launchers (or escaped prisoners, oops), and exactly how many.
 
 ### Escaping Prisoners
 
