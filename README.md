@@ -2,6 +2,8 @@
 
 This is a mod for the game RimWorld by Ludeon Studios.
 
+It offers more Alerts in the righthand sidebar that players might be interested in.
+
 # Table of Contents
 
 * [Introduction and Explanation](#introduction-and-explanation)
