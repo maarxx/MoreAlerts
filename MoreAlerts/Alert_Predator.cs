@@ -21,6 +21,10 @@ namespace MoreAlerts
         {
             if (
                     p.def.race.predator
+                    && (
+                        p.Faction == null
+                        || p.Faction.HostileTo(Faction.OfPlayer)
+                        )
                 )
             {
                 return true;
