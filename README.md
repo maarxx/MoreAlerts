@@ -49,6 +49,12 @@ This alert follows whether a wild animal is hunting one of your faction members 
 
 During manhunter events, it also conveniently tells you exactly how many manhunter animals are left.
 
+### Predator
+
+This alert just tracks the total number of predators on your map, even if they haven't yet decided to hunt down and devour your loved ones.
+
+It is useful for preemptively exterminating them.
+
 ### Mechanoids
 
 This alert follows whether there are any mechanoids on your map, and exactly how many.
