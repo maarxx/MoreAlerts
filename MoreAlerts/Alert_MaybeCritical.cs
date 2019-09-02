@@ -34,14 +34,13 @@ namespace MoreAlerts
 
             if (this.defaultPriority == AlertPriority.Critical)
             {
-                if (this.lastActiveFrame < Time.frameCount - 1)
+                if (lastActiveFrame < Time.frameCount - 1)
                 {
-                    Messages.Message("MessageCriticalAlert".Translate(new object[]
-                    {
-                    this.GetLabel()
-                    }), this.GetReport().culprit, MessageSound.SeriousAlert);
+                    string text = "MessageCriticalAlert".Translate(GetLabel().CapitalizeFirst());
+                    AlertReport report = GetReport();
+                    Messages.Message(text, new LookTargets(report.culprits), MessageTypeDefOf.ThreatBig);
                 }
-                this.lastActiveFrame = Time.frameCount;
+                lastActiveFrame = Time.frameCount;
             }
             else
             {
