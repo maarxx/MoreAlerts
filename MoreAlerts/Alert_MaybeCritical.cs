@@ -21,17 +21,6 @@ namespace MoreAlerts
         public override void AlertActiveUpdate()
         {
 
-            /*
-            if (this.defaultPriority == AlertPriority.Critical)
-            {
-                (this as Alert_Critical).AlertActiveUpdate();
-            }
-            else
-            {
-                (this as Alert).AlertActiveUpdate();
-            }
-            */
-
             if (this.defaultPriority == AlertPriority.Critical)
             {
                 if (lastActiveFrame < Time.frameCount - 1)
@@ -51,20 +40,6 @@ namespace MoreAlerts
 
         protected override Color BGColor
         {
-
-            /*
-            get
-            {
-                if (this.defaultPriority == AlertPriority.Critical)
-                {
-                    return (this as Alert_Critical).BGColor;
-                }
-                else
-                {
-                    return (this as Alert).BGColor;
-                }
-            }
-            */
 
             get
             {

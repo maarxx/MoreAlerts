@@ -22,7 +22,7 @@ namespace MoreAlerts
         public override AlertReport GetReport()
         {
             GetAffectedThings();
-            return this.affectedThings.FirstOrDefault();
+            return AlertReport.CulpritsAre(affectedThings);
         }
 
         public override string GetLabel()
