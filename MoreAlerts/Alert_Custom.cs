@@ -41,7 +41,7 @@ namespace MoreAlerts
             {
                 stringBuilder.AppendLine("    " + current.Label);
             }
-            return stringBuilder.ToString();
+            return stringBuilder.ToString().TrimEnd('\n'); ;
         }
 
         protected abstract void GetAffectedThings();

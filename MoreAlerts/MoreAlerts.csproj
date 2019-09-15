@@ -55,6 +55,7 @@
     <Compile Include="Alert_Custom_Spawned.cs" />
     <Compile Include="Alert_DoorBlockedOpen.cs" />
     <Compile Include="Alert_DoorHeldOpen.cs" />
+    <Compile Include="Alert_BleedDeath.cs" />
     <Compile Include="Alert_ImmunityDeath.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Insects.cs" />
