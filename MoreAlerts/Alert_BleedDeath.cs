@@ -42,6 +42,7 @@ namespace MoreAlerts
         {
             GetAffectedThings();
             garbageCollectDeadPawns();
+            if (bleeders.Count == 0) { return ""; } // stave off empty collection error as alert is fading
             var minBleeder = bleeders.MinBy(kvp => kvp.Value);
             if (minBleeder.Value < 12500)
             {
