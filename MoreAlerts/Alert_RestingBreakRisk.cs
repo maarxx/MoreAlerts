@@ -23,11 +23,20 @@ namespace MoreAlerts
             {
                 if (p.needs.mood.CurLevel < p.mindState.mentalBreaker.BreakThresholdMinor)
                 {
-                    return true;
+                    if (pawnCanMove(p))
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
         }
 
+        private bool pawnCanMove(Pawn p)
+        {
+            return p.health.capacities.CanBeAwake
+                   && p.health.capacities.GetLevel(PawnCapacityDefOf.Moving) > 0.16F
+                   && !p.health.InPainShock;
+        }
     }
 }
