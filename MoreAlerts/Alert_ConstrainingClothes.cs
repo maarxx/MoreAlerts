@@ -9,7 +9,6 @@ namespace MoreAlerts
 {
     class Alert_ConstrainingClothes : Alert_Custom_FreeColonistsSpawned
     {
-
         public Alert_ConstrainingClothes()
         {
             this.defaultLabel = "constraining clothes";
@@ -29,6 +28,5 @@ namespace MoreAlerts
             }
             return false;
         }
-
     }
 }

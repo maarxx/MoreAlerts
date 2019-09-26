@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_WastingPsychicHelmet.cs" />
     <Compile Include="Alert_Custom.cs" />
     <Compile Include="Alert_Custom_FreeColonistOrPrisonerSpawned.cs" />
     <Compile Include="Alert_Custom_FreeColonistsSpawned.cs" />
