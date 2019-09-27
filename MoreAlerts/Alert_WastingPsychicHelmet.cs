@@ -36,9 +36,9 @@ namespace MoreAlerts
                 return false;
             }
 
-            foreach (Thing t in p.equipment.AllEquipmentListForReading)
+            foreach (Apparel a in p.apparel.WornApparel)
             {
-                if (t.def.defName == "Apparel_PsychicFoilHelmet")
+                if (a.def.defName == "Apparel_PsychicFoilHelmet")
                 {
                     return true;
                 }
