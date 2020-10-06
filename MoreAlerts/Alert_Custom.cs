@@ -31,7 +31,7 @@ namespace MoreAlerts
             return "" + affectedThings.Count() + " " + defaultLabel;
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             GetAffectedThings();
             StringBuilder stringBuilder = new StringBuilder();

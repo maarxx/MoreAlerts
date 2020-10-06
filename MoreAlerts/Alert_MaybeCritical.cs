@@ -27,7 +27,7 @@ namespace MoreAlerts
                 {
                     string text = "MessageCriticalAlert".Translate(GetLabel().CapitalizeFirst());
                     AlertReport report = GetReport();
-                    Messages.Message(text, new LookTargets(report.culprits), MessageTypeDefOf.ThreatBig);
+                    Messages.Message(text, new LookTargets(report.AllCulprits), MessageTypeDefOf.ThreatBig);
                 }
                 lastActiveFrame = Time.frameCount;
             }

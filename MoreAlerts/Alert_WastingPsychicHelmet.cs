@@ -21,7 +21,7 @@ namespace MoreAlerts
             {
                 return true;
             }
-            List<Thing> emanators = map.listerThings.ThingsInGroup(ThingRequestGroup.PsychicDroneEmanator);
+            List<Thing> emanators = map.listerThings.ThingsInGroup(ThingRequestGroup.ConditionCauser); // PROBABLY WRONG
             if (emanators.Any())
             {
                 return true;

@@ -58,7 +58,7 @@ namespace MoreAlerts
             return stringBuilder.ToString().TrimEnd('\n'); ;
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             GetAffectedThings();
             garbageCollectDeadPawns();
