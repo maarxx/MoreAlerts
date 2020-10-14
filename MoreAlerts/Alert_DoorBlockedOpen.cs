@@ -34,7 +34,7 @@ namespace MoreAlerts
                         if (b is Building_Door)
                         {
                             Building_Door bd = (Building_Door)b;
-                            if (!bd.WillCloseSoon)
+                            if (!bd.WillCloseSoon && !bd.HoldOpen)
                             {
                                 this.affectedThings.Add(bd);
                             }
