@@ -22,7 +22,7 @@ namespace MoreAlerts
         public override AlertReport GetReport()
         {
             GetAffectedThings();
-            return this.affectedThings.FirstOrDefault();
+            return AlertReport.CulpritsAre(affectedThings);
         }
 
         public override string GetLabel()
@@ -31,7 +31,7 @@ namespace MoreAlerts
             return "" + affectedThings.Count() + " " + defaultLabel;
         }
 
-        public override string GetExplanation()
+        public override TaggedString GetExplanation()
         {
             GetAffectedThings();
             StringBuilder stringBuilder = new StringBuilder();
@@ -41,7 +41,7 @@ namespace MoreAlerts
             {
                 stringBuilder.AppendLine("    " + current.Label);
             }
-            return stringBuilder.ToString();
+            return stringBuilder.ToString().TrimEnd('\n'); ;
         }
 
         protected abstract void GetAffectedThings();

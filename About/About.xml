@@ -3,6 +3,8 @@
   <name>MoreAlerts</name>
   <author>Maarx</author>
   <url>https://github.com/maarxx/MoreAlerts/</url>
-  <targetVersion>0.16.1393</targetVersion>
+  <supportedVersions>
+    <li>1.0</li>
+  </supportedVersions>
   <description>Offers more Alerts in the righthand sidebar that players might be interested in.</description>
 </ModMetaData>

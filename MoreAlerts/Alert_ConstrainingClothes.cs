@@ -7,13 +7,12 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_SleptInCold : Alert_Custom_FreeColonistsAndPrisonersSpawned
+    class Alert_ConstrainingClothes : Alert_Custom_FreeColonistsSpawned
     {
-
-        public Alert_SleptInCold()
+        public Alert_ConstrainingClothes()
         {
-            defaultLabel = "Slept in Cold";
-            defaultExplanation = "Colonist slept in Cold.";
+            this.defaultLabel = "constraining clothes";
+            this.defaultExplanation = "Some nudists have constraining clothes.";
         }
 
         protected override bool isPawnAffected(Pawn p)
@@ -22,14 +21,10 @@ namespace MoreAlerts
             p.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
             foreach (Thought t in thoughts)
             {
-                if (t.def == ThoughtDefOf.SleptInCold)
+                if (t.def.defName == "ClothedNudist")
                 {
                     return true;
                 }
-            }
-            if (!p.Awake() && p.AmbientTemperature < p.def.GetStatValueAbstract(StatDefOf.ComfyTemperatureMin))
-            {
-                return true;
             }
             return false;
         }

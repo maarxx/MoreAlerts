@@ -18,8 +18,8 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            PrisonerInteractionMode pim = p.guest.interactionMode;
-            if (pim == PrisonerInteractionMode.NoInteraction || pim == PrisonerInteractionMode.Chat)
+            PrisonerInteractionModeDef pim = p.guest.interactionMode;
+            if (pim == PrisonerInteractionModeDefOf.NoInteraction || pim == PrisonerInteractionModeDefOf.ReduceResistance)
             {
                 return true;
             }

@@ -19,7 +19,7 @@ namespace MoreAlerts
         protected override bool isPawnAffected(Pawn p)
         {
             Area area = p.playerSettings.AreaRestriction;
-            if (area != null && area.Label != "Psyche" && area.Label != "ToxicH")
+            if (area != null && area.Label != "Joy" && area.Label != "Medi" && area.Label != "ToxicH")
             {
                 return true;
             }

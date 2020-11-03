@@ -7,19 +7,19 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_Mechanoids : Alert_Custom_Spawned
+    class Alert_Insects : Alert_Custom_Spawned
     {
 
-        public Alert_Mechanoids()
+        public Alert_Insects()
         {
             this.defaultPriority = AlertPriority.Critical;
-            this.defaultLabel = "mechanoids";
-            this.defaultExplanation = "There are mechanoids!";
+            this.defaultLabel = "insects";
+            this.defaultExplanation = "There are insects!";
         }
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.Faction != null && p.Faction.def == FactionDefOf.Mechanoid && !p.Downed)
+            if (p.Faction != null && p.Faction.def == FactionDefOf.Insect && !p.Downed)
             {
                 return true;
             }

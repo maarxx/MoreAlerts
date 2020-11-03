@@ -18,9 +18,11 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            foreach (Thought_Situational ts in p.needs.mood.thoughts.situational.GetSituationalThoughtsAffectingMood())
+            List<Thought> thoughts = new List<Thought>();
+            p.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
+            foreach (Thought t in thoughts)
             {
-                if (ts is Thought_WantToSleepWithSpouseOrLover)
+                if (t is Thought_WantToSleepWithSpouseOrLover)
                 {
                     return true;
                 }
