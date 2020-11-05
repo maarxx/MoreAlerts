@@ -35,6 +35,10 @@ namespace MoreAlerts
                                 float daysToDeath = (1 - h.Severity) / hci.Props.severityPerDayNotImmune;
                                 if (daysToDeath < daysToImmune)
                                 {
+                                    if (h.Severity > 0.6f)
+                                    {
+                                        this.defaultPriority = AlertPriority.Critical;
+                                    }
                                     return true;
                                 }
                             }
