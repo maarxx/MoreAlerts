@@ -27,38 +27,20 @@ namespace MoreAlerts
             }
             else
             {
-                //this.affectedThings = new List<Thing>();
-                for (int i = this.affectedThings.Count - 1; i >= 0; i--)
+                this.affectedThings = new List<Thing>();
+                foreach (Map map in Find.Maps)
                 {
-                    if ((bool)this.affectedThings[i].TryGetComp<CompPowerTrader>()?.PowerOn)
+                    foreach (PowerNet pn in map.powerNetManager.AllNetsListForReading)
                     {
-                        this.affectedThings.RemoveAt(i);
+                        foreach (CompPowerTrader cpt in pn.powerComps)
+                        {
+                            if (!cpt.PowerOn && FlickUtility.WantsToBeOn(cpt.parent) && !cpt.parent.IsBrokenDown())
+                            {
+                                this.affectedThings.Add(cpt.parent);
+                            }
+                        }
                     }
                 }
-                Type type = typeof(PowerNet);
-                FieldInfo field = type.GetField("partsWantingPowerOn", BindingFlags.NonPublic | BindingFlags.Static);
-                List<CompPowerTrader> partsWantingPowerOn = (List<CompPowerTrader>)field.GetValue(Find.Maps[0].powerNetManager.AllNetsListForReading[0]);
-                Log.Message("Hello from Alert_Thing_Unpowered: " + partsWantingPowerOn.Count);
-                foreach (CompPowerTrader cpt in partsWantingPowerOn)
-                {
-                    //this.affectedThings.Add(cpt.parent);
-                    if (this.affectedThings.IndexOf(cpt.parent) == -1)
-                    {
-                        this.affectedThings.Add(cpt.parent);
-                    }
-                }
-                //foreach (Map map in Find.Maps)
-                //{
-                //    foreach (PowerNet pn in map.powerNetManager.AllNetsListForReading)
-                //    {
-                //        partsWantingPowerOn = (List<CompPowerTrader>)field.GetValue(Find.Maps[0].powerNetManager.AllNetsListForReading[0]);
-                //        Log.Message("Hello from Alert_Thing_Unpowered: " + partsWantingPowerOn.Count);
-                //        foreach (CompPowerTrader cpt in partsWantingPowerOn)
-                //        {
-                //            this.affectedThings.Add(cpt.parent.StoringThing());
-                //        }
-                //    }
-                //}
                 lastTick = curTick;
             }
         }
