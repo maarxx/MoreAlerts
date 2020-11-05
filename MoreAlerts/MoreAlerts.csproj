@@ -83,6 +83,7 @@
     <Compile Include="Alert_SleptInHeat.cs" />
     <Compile Include="Alert_ConstrainingClothes.cs" />
     <Compile Include="Alert_WantToSleepWith.cs" />
+    <Compile Include="Alert_Thing_Unpowered.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
