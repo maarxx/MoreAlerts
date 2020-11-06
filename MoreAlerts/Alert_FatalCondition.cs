@@ -7,7 +7,7 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_FatalCondition : Alert_Custom_FreeColonistsAndPrisonersSpawned
+    class Alert_FatalCondition : Alert_Custom_AllPawnsOfPlayerFaction
     {
 
         public Alert_FatalCondition()
