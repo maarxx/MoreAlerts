@@ -43,30 +43,35 @@ namespace MoreAlerts
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                if (h.Visible && h is HediffWithComps)
+                if (h.Visible)
                 {
-                    HediffWithComps hwc = (HediffWithComps)h;
-                    if (!(h.def.lethalSeverity > 0))
+                    if (h.def.lethalSeverity > 0)
                     {
-                        continue;
-                    }
-                    bool compIsImmunizable = false;
-                    foreach (HediffComp hc in hwc.comps)
-                    {
-                        if (hc is HediffComp_Immunizable)
+                        if (h is HediffWithComps)
                         {
-                            compIsImmunizable = true;
+                            HediffWithComps hwc = (HediffWithComps)h;
+                            bool compIsImmunizable = false;
+                            foreach (HediffComp hc in hwc.comps)
+                            {
+                                if (hc is HediffComp_Immunizable)
+                                {
+                                    compIsImmunizable = true;
+                                }
+                            }
+                            if (!compIsImmunizable)
+                            {
+                                return h.Severity;
+                            }
+
                         }
-                    }
-                    if (!compIsImmunizable)
-                    {
-                        Log.Message(p.Label + ": " + h.Label);
-                        return h.Severity;
+                        else
+                        {
+                            return h.Severity;
+                        }
                     }
                 }
             }
             return 0f;
-
         }
 
         protected override void sortAffectedThings()
