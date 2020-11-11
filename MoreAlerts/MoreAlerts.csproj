@@ -73,7 +73,7 @@
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Insects.cs" />
     <Compile Include="Alert_Mechanoids.cs" />
-    <Compile Include="Alert_NotRecruitingPrisoner.cs" />
+    <Compile Include="Alert_NotInteractingPrisoner.cs" />
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />

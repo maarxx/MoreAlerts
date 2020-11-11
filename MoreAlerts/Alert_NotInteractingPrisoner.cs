@@ -7,19 +7,19 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_NotRecruitingPrisoner : Alert_Custom_PrisonersOfColonySpawned
+    class Alert_NotInteractingPrisoner : Alert_Custom_PrisonersOfColonySpawned
     {
 
-        public Alert_NotRecruitingPrisoner()
+        public Alert_NotInteractingPrisoner()
         {
-            this.defaultLabel = "prisoners not recruiting";
-            this.defaultExplanation = "Some prisoners aren't being recruited!";
+            this.defaultLabel = "prisoners not interacting";
+            this.defaultExplanation = "Some prisoners aren't being interacted!";
         }
 
         protected override bool isPawnAffected(Pawn p)
         {
             PrisonerInteractionModeDef pim = p.guest.interactionMode;
-            if (pim == PrisonerInteractionModeDefOf.NoInteraction || pim == PrisonerInteractionModeDefOf.ReduceResistance)
+            if (pim == PrisonerInteractionModeDefOf.NoInteraction)
             {
                 return true;
             }
