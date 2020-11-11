@@ -41,7 +41,13 @@ namespace MoreAlerts
                     {
                         if (hc is HediffComp_Immunizable)
                         {
-                            return true;
+                            // Artery Blockage is HediffComp_Immunizable but Never Has Immunity?
+                            // Filter Using Immunity > 0
+                            HediffComp_Immunizable hci = hc as HediffComp_Immunizable;
+                            if (hci.Immunity > 0 && hci.Immunity < 100)
+                            {
+                                return true;
+                            }
                         }
                     }
                 }
