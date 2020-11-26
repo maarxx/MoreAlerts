@@ -43,7 +43,7 @@ namespace MoreAlerts
         {
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
-                if (h.Visible)
+                if (h.Visible && h.def.defName != "Malnutrition" && h.def.defName != "BloodLoss")
                 {
                     if (h.def.lethalSeverity > 0)
                     {
