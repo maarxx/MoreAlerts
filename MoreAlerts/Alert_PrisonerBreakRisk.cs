@@ -19,7 +19,8 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.needs.mood.CurLevel < p.mindState.mentalBreaker.BreakThresholdMinor)
+            if (p.needs.mood.CurLevel < p.mindState.mentalBreaker.BreakThresholdExtreme ||
+                p.needs.mood.CurInstantLevel < p.mindState.mentalBreaker.BreakThresholdExtreme)
             {
                 if (pawnCanMove(p))
                 {
