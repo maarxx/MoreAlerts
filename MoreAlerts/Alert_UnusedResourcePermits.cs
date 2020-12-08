@@ -19,7 +19,7 @@ namespace MoreAlerts
 
         protected override bool isPawnAffected(Pawn p)
         {
-            if (p.royalty.HasAidPermit)
+            if (p.royalty.HasAidPermit && !p.IsQuestLodger())
             {
                 foreach (FactionPermit permit in p.royalty.AllFactionPermits)
                 {
