@@ -32,7 +32,7 @@ namespace MoreAlerts
                 {
                     foreach (Thing t in map.listerBuildingsRepairable.RepairableBuildings(Faction.OfPlayer))
                     {
-                        if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints)
+                        if (t.def.useHitPoints && t.HitPoints < t.MaxHitPoints && Find.CurrentMap.areaManager.Home[t.Position])
                         {
                             this.affectedThings.Add(t);
                         }
