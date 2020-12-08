@@ -54,8 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_Custom_AllPawnsOfPlayerFaction.cs" />
     <Compile Include="Alert_GrowingZoneNotSowing.cs" />
     <Compile Include="Alert_FireWithoutRain.cs" />
+    <Compile Include="Alert_FatalCondition.cs" />
+    <Compile Include="Alert_Building_Damaged.cs" />
+    <Compile Include="Alert_PrisonerBreakRisk.cs" />
+    <Compile Include="Alert_UnusedResourcePermits.cs" />
     <Compile Include="Alert_WastingPsychicHelmet.cs" />
     <Compile Include="Alert_Custom.cs" />
     <Compile Include="Alert_Custom_FreeColonistOrPrisonerSpawned.cs" />
@@ -65,11 +70,11 @@
     <Compile Include="Alert_DoorBlockedOpen.cs" />
     <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_BleedDeath.cs" />
-    <Compile Include="Alert_ImmunityDeath.cs" />
+    <Compile Include="Alert_ImmunityCondition.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Insects.cs" />
     <Compile Include="Alert_Mechanoids.cs" />
-    <Compile Include="Alert_NotRecruitingPrisoner.cs" />
+    <Compile Include="Alert_NotInteractingPrisoner.cs" />
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />
@@ -83,6 +88,9 @@
     <Compile Include="Alert_SleptInHeat.cs" />
     <Compile Include="Alert_ConstrainingClothes.cs" />
     <Compile Include="Alert_WantToSleepWith.cs" />
+    <Compile Include="Alert_Thing_Unpowered.cs" />
+    <Compile Include="Alert_HostileNonHostiles.cs" />
+    <Compile Include="Alert_DownedForeigners.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

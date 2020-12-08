@@ -27,6 +27,7 @@ namespace MoreAlerts
                         this.affectedThings.Add(p);
                     }
                 }
+                sortAffectedThings();
                 lastTick = curTick;
             }
         }

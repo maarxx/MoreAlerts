@@ -7,7 +7,7 @@ using Verse;
 
 namespace MoreAlerts
 {
-    abstract class Alert_Custom_Spawned : Alert_Custom
+    abstract class Alert_Custom_AllPawnsOfPlayerFaction : Alert_Custom
     {
         protected override void GetAffectedThings()
         {
@@ -20,7 +20,14 @@ namespace MoreAlerts
             else
             {
                 this.affectedThings = new List<Thing>();
-                foreach (Pawn p in PawnsFinder.AllMaps_Spawned)
+                foreach (Pawn p in PawnsFinder.AllMaps_SpawnedPawnsInFaction(Faction.OfPlayer))
+                {
+                    if (isPawnAffected(p))
+                    {
+                        this.affectedThings.Add(p);
+                    }
+                }
+                foreach (Pawn p in PawnsFinder.AllMaps_PrisonersOfColonySpawned)
                 {
                     if (isPawnAffected(p))
                     {
@@ -33,6 +40,5 @@ namespace MoreAlerts
         }
 
         protected abstract bool isPawnAffected(Pawn p);
-
     }
 }
