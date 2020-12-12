@@ -24,6 +24,7 @@ namespace MoreAlerts
             {
                 if (p.AnimalOrWildMan() && !p.HostileTo(Faction.OfPlayer)) { return false; }
                 if (p.IsPrisonerOfColony && p.guest.PrisonerIsSecure) { return false; }
+                if ((p.guest.HostFaction == Faction.OfPlayer) && p.InBed()) { return false; }
                 if (p.Faction != null && p.Faction != Faction.OfPlayer) { return true; }
             }
             return false;
