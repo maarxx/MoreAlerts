@@ -62,7 +62,7 @@ namespace MoreAlerts
             return false;
         }
 
-        protected override void sortAffectedThings()
+        protected override void SortAffectedThings()
         {
             this.affectedThings.Sort(compareTwoPawnSeverity);
         }

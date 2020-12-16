@@ -23,6 +23,7 @@ namespace MoreAlerts
             {
                 return;
             }
+            this.affectedThings.Clear();
             foreach (Func<List<Pawn>> flp in potentialTargets)
             {
                 List<Pawn> lp = flp.Invoke();

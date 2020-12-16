@@ -38,12 +38,12 @@ namespace MoreAlerts
                         }
                     }
                 }
-                sortAffectedThings();
+                SortAffectedThings();
                 lastTick = curTick;
             }
         }
 
-        protected override void sortAffectedThings()
+        protected override void SortAffectedThings()
         {
             this.affectedThings.Sort(compareBuildingDamage);
         }

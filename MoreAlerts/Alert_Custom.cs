@@ -46,7 +46,7 @@ namespace MoreAlerts
 
         protected abstract void GetAffectedThings();
 
-        protected virtual void sortAffectedThings()
+        protected virtual void SortAffectedThings()
         {
             // this space intentionally left blank
             // method is technically implemented

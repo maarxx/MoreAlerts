@@ -86,6 +86,7 @@
     <Compile Include="Alert_Thing_Unpowered.cs" />
     <Compile Include="Alert_HostileNonHostiles.cs" />
     <Compile Include="Alert_DownedForeigners.cs" />
+    <Compile Include="Alert_Custom_withMeta.cs" />
     <Compile Include="Alert_Custom_Pawns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
