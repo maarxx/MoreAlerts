@@ -7,32 +7,17 @@ using Verse;
 
 namespace MoreAlerts
 {
-    abstract class Alert_Custom_Spawned : Alert_Custom
+    abstract class Alert_Custom_Spawned : Alert_Custom_Pawns
     {
-        protected override void GetAffectedThings()
+        static List<Func<List<Pawn>>> Potentials()
         {
-
-            int curTick = Find.TickManager.TicksGame;
-            if (lastTick + 10 > curTick)
-            {
-                return;
-            }
-            else
-            {
-                this.affectedThings = new List<Thing>();
-                foreach (Pawn p in PawnsFinder.AllMaps_Spawned)
-                {
-                    if (isPawnAffected(p))
-                    {
-                        this.affectedThings.Add(p);
-                    }
-                }
-                sortAffectedThings();
-                lastTick = curTick;
-            }
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_Spawned; });
+            return pots;
         }
-
-        protected abstract bool isPawnAffected(Pawn p);
-
+        public Alert_Custom_Spawned() : base(Potentials())
+        {
+            //
+        }
     }
 }
