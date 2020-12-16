@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
-    <Compile Include="Alert_Custom_AllPawnsOfPlayerFaction.cs" />
     <Compile Include="Alert_GrowingZoneNotSowing.cs" />
     <Compile Include="Alert_FireWithoutRain.cs" />
     <Compile Include="Alert_FatalCondition.cs" />
@@ -63,10 +62,6 @@
     <Compile Include="Alert_UnusedResourcePermits.cs" />
     <Compile Include="Alert_WastingPsychicHelmet.cs" />
     <Compile Include="Alert_Custom.cs" />
-    <Compile Include="Alert_Custom_FreeColonistOrPrisonerSpawned.cs" />
-    <Compile Include="Alert_Custom_FreeColonistsSpawned.cs" />
-    <Compile Include="Alert_Custom_PrisonerSpawned.cs" />
-    <Compile Include="Alert_Custom_Spawned.cs" />
     <Compile Include="Alert_DoorBlockedOpen.cs" />
     <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_BleedDeath.cs" />

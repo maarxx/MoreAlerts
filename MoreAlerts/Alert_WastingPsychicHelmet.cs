@@ -7,9 +7,16 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_WastingPsychicHelmet : Alert_Custom_FreeColonistsSpawned
+    class Alert_WastingPsychicHelmet : Alert_Custom_Pawns
     {
-        public Alert_WastingPsychicHelmet()
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_FreeColonistsSpawned; });
+            return pots;
+        }
+
+        public Alert_WastingPsychicHelmet() : base(Potentials())
         {
             this.defaultLabel = "wasting psychic helmets";
             this.defaultExplanation = "Some colonists are pointlessly wearing psychic helmets.";

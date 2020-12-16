@@ -7,9 +7,16 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_ConstrainingClothes : Alert_Custom_FreeColonistsSpawned
+    class Alert_ConstrainingClothes : Alert_Custom_Pawns
     {
-        public Alert_ConstrainingClothes()
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_FreeColonistsSpawned; });
+            return pots;
+        }
+
+        public Alert_ConstrainingClothes() : base(Potentials())
         {
             this.defaultLabel = "constraining clothes";
             this.defaultExplanation = "Some nudists have constraining clothes.";

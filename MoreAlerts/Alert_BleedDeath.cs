@@ -7,10 +7,17 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_BleedDeath : Alert_Custom_FreeColonistsAndPrisonersSpawned
+    class Alert_BleedDeath : Alert_Custom_Pawns
     {
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_FreeColonistsAndPrisonersSpawned; });
+            return pots;
+        }
+
         Dictionary<Pawn, int> bleeders = new Dictionary<Pawn, int>();
-        public Alert_BleedDeath()
+        public Alert_BleedDeath() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.High;
             this.defaultLabel = "bleeders";

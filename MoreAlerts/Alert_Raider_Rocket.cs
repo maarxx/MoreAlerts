@@ -7,10 +7,16 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_Raider_Rocket : Alert_Custom_Spawned
+    class Alert_Raider_Rocket : Alert_Custom_Pawns
     {
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_Spawned; });
+            return pots;
+        }
 
-        public Alert_Raider_Rocket()
+        public Alert_Raider_Rocket() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.Critical;
             this.defaultLabel = "rockets";

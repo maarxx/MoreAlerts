@@ -7,10 +7,17 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_FatalCondition : Alert_Custom_AllPawnsOfPlayerFaction
+    class Alert_FatalCondition : Alert_Custom_Pawns
     {
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_SpawnedPawnsInFaction(Faction.OfPlayer); });
+            pots.Add(delegate { return PawnsFinder.AllMaps_PrisonersOfColonySpawned; });
+            return pots;
+        }
 
-        public Alert_FatalCondition()
+        public Alert_FatalCondition() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.High;
             this.defaultLabel = "fatal conditions";
