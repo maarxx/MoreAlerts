@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_ImmunityCondition.cs" />
     <Compile Include="Alert_GrowingZoneNotSowing.cs" />
     <Compile Include="Alert_FireWithoutRain.cs" />
     <Compile Include="Alert_FatalCondition.cs" />
@@ -65,7 +66,6 @@
     <Compile Include="Alert_DoorBlockedOpen.cs" />
     <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_BleedDeath.cs" />
-    <Compile Include="Alert_ImmunityCondition.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
     <Compile Include="Alert_Insects.cs" />
     <Compile Include="Alert_Mechanoids.cs" />
