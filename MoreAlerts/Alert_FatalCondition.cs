@@ -7,11 +7,6 @@ using Verse;
 
 namespace MoreAlerts
 {
-    struct Condition_withSeverity
-    {
-        public string condition;
-        public float severity;
-    }
     class Alert_FatalCondition : Alert_Custom_Pawns_withMeta
     {
         static List<Func<List<Pawn>>> Potentials()
@@ -55,16 +50,13 @@ namespace MoreAlerts
 
         protected override void considerToAddPawnWithMeta(Pawn p)
         {
-            List<Condition_withSeverity> cws = getCompsWithSeverity(p);
-            foreach (Condition_withSeverity c in cws)
-            {
-                this.affectedThingsWithMeta.Add(new Thing_withMeta() { thing = p, meta = (new object[] { c.condition, c.severity }) });
-            }
+            List<Thing_withMeta> twms = getCompsWithSeverity(p);
+            this.affectedThingsWithMeta.AddRange(twms);
         }
 
-        private static List<Condition_withSeverity> getCompsWithSeverity(Pawn p)
+        private static List<Thing_withMeta> getCompsWithSeverity(Pawn p)
         {
-            List<Condition_withSeverity> cws = new List<Condition_withSeverity>();
+            List<Thing_withMeta> twms = new List<Thing_withMeta>();
             foreach (Hediff h in p.health.hediffSet.hediffs)
             {
                 //if (h.Visible && h.def.defName != "Malnutrition" && h.def.defName != "BloodLoss")
@@ -85,21 +77,18 @@ namespace MoreAlerts
                             }
                             if (!compIsImmunizable)
                             {
-                                cws.Add(new Condition_withSeverity() { condition = h.Label, severity = h.Severity });
-                                //return h.Severity;
+                                twms.Add(new Thing_withMeta() { thing = p, meta = (new object[] { h.LabelBase, h.Severity }) });
                             }
 
                         }
                         else
                         {
-                            cws.Add(new Condition_withSeverity() { condition = h.Label, severity = h.Severity });
-                            //return h.Severity;
+                            twms.Add(new Thing_withMeta() { thing = p, meta = (new object[] { h.LabelBase, h.Severity }) });
                         }
                     }
                 }
             }
-            return cws;
-            //return 0f;
+            return twms;
         }
 
         protected override void SortAffectedThings()
