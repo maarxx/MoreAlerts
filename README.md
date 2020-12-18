@@ -4,10 +4,11 @@ This is a mod for the game RimWorld by Ludeon Studios.
 
 It offers more Alerts in the righthand sidebar that players might be interested in.
 
+We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
+
 # Table of Contents
 
 * [Introduction and Explanation](#introduction-and-explanation)
-* [Specific Additional Features](#specific-additional-features)
 * [How to Install](#how-to-install)
 * [How to Update](#how-to-update)
 * [Bugs, New Features, and Updates](#bugs-new-features-and-updates)
@@ -25,7 +26,7 @@ Some of the new alerts include:
 ### Pawns are Hot
 ### Pawns are Cold
 
-These alerts literally follow whether the pawn's current instantaneous temperature is outside their comfort zone.
+These alerts literally follow whether the pawn's current instantaneous temperature is outside their comfort zone, considering their clothing.
 
 ### Slept in Heat
 ### Slept in Cold
@@ -41,7 +42,7 @@ These are two separate alerts, which, respectively, keep track of Doors which ar
 
 This alert follows whether the Pawn's current Allowed Area is something other than "Unrestricted".
 
-It also ignores zones named "Psyche" or "ToxicH" for compatibility with my other mod [SmarterScheduling](https://github.com/maarxx/SmarterScheduling).
+It also ignores zones named "Joy" or "ToxicH" for compatibility with my other mod [SmarterScheduling](https://github.com/maarxx/SmarterScheduling).
 
 ### Animal Hunting
 
@@ -59,6 +60,10 @@ It is useful for preemptively exterminating them.
 
 This alert follows whether there are any mechanoids on your map, and exactly how many.
 
+## Insects
+
+This alert follows whether there are any insects on your map, and exactly how many.
+
 ### Raiders
 
 This alert follows whether there are any hostile humanoid raiders on your map, and exactly how many.
@@ -67,21 +72,37 @@ This alert follows whether there are any hostile humanoid raiders on your map, a
 
 This alert follows whether there are any hostile humanoids with rocket launchers (or prisoners, oops), and exactly how many.
 
+### Hostile Non-Hostiles
+
+This alert follows whether there are hostile things on your map that aren't normally a hostile faction. Tracks everything affected by Berserk or Neuroquake, etc, regardless of faction.
+
 ### Escaping Prisoners
 
 This alert follows whether there any any escaping prisoners on your map, and how many.
 
 This could be due to a Prison Break event, or just because some idiot left the door open.
 
+Technically, it is prisoners "out of control", and also includes prisoners on mental breaks, even if they are still contained within a cell.
+
 ### Not Recruiting Prisoner
 
-This alert tracks whether you have a prisoner lingering in your prison who is set to either "No Interaction" or "Chat".
+This alert tracks whether you have a prisoner lingering in your prison who is set to "No Interaction". Even if you didn't forget to recruit them, you probably at least want to set them to "Reduce Resistance" for free Warden training.
 
-### Immunity Death
+### Prisoner Break Risk
 
-This alert looks for pawns with diseases with Immunity percentages and Severity percentages. It does rough math to approximate which will hit 100% first, and throws this alert for any pawn which might die of 100% severity before 100% immunity.
+Tracks prisoners currently within range of Extreme mental break.
 
-The math is conservative and errs on the side of assuming death. You need like a +10% lead or more for the alert to fall off. It lists everybody you should keep an eye on.
+### Immunity Conditions
+
+We look for pawns with health conditions with an Immunity component, and sort them by the Immunity/Severity differential, putting the most at-risk ones up top, and putting the top-most one right in the label text, so you don't forget.
+
+### Fatal Conditions
+
+This is like the above, but for Non-Immunity conditions, but which are still fatal at 100%. Think everything from Malnutrition to Heatstroke to Hypothermia to Blood Rot. We exclude Blood Loss, handled separately.
+
+### Bleed Death
+
+This tracks pawns who are bleeding, sorted by time to death. We put the worst one right in the label.
 
 ### Rest Until Healed
 
@@ -97,15 +118,41 @@ But pawns that are resting in bed for medical reasons, but not asleep, have nast
 
 This alert tracks pawns that are resting, in bed, but not sleeping, who are break risks. Very useful.
 
+### Building Damaged
+
+Tracks buildings which are damaged, like walls hit by gunfire and stuff. Useful to know how much repair work you've got ahead of you. Sorts by %, worst one up top. Helpful to know which walls the sappers are going to come through.
+
 ### Want to Sleep With
 
 This alert follows whether a pawn is suffering from negative thought about not being able to sleep with their lover or spouse.
 
-I like to know this because it is an easy thing to fix.
+### Constraining Clothes
 
-# Specific Additional Features
+This alert follows whether you forgot to tell any Nudists that they can take off their clothes now because the emergency is over.
 
-None, as of yet.
+### Downed Foreigner
+
+Tracks downed pawns which are not your faction, everything from hostile raiders to traders to ally military aid. All people you want to either capture or rescue.
+
+### Fire Without Rain
+
+Lists how many tiles of fire are on the entire map (not just Home area), but only if it isn't raining. Goes away when it begins to rain, comes back when rain is ending.
+
+### Growing Zone Not Sowing
+
+If you ticked a Growing Zone to disallow Sowing, that was probably temporary. Reminds you, so that you don't forget and run out of food.
+
+### Thing Unpowered
+
+This alert tracks whether a building on your map requires power and is currently unpowered. Good to know when your grid has been cut, or batteries/generators have run out.
+
+### Wasting Psychic Helmet
+
+Tracks that a pawn is wearing a Psychic Helmet, but there is no active event like Psychic Drone. Probably want to take it off for now.
+
+### Unused Resource Permits
+
+Some Royalty Permits, like Steel Drop / Food Drop / Glittermed Drop / etc, are just free resources, and you want to use them as soon as they become available, every time, and not using them is just wasting them. Alerts you that one has come off cooldown.
 
 # How to Install
 
