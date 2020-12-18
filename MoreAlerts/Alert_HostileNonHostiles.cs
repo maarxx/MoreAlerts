@@ -8,10 +8,16 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_HostileNonHostiles : Alert_Custom_Spawned
+    class Alert_HostileNonHostiles : Alert_Custom_Pawns
     {
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_Spawned; });
+            return pots;
+        }
 
-        public Alert_HostileNonHostiles()
+        public Alert_HostileNonHostiles() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.Critical;
             this.defaultLabel = "hostiles";

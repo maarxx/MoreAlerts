@@ -7,10 +7,16 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_UnusedResourcePermits : Alert_Custom_FreeColonistsSpawned
+    class Alert_UnusedResourcePermits : Alert_Custom_Pawns
     {
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_FreeColonistsSpawned; });
+            return pots;
+        }
 
-        public Alert_UnusedResourcePermits()
+        public Alert_UnusedResourcePermits() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.Medium;
             this.defaultLabel = "unused resource permits";

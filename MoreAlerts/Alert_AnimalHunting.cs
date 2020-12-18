@@ -8,10 +8,15 @@ using Verse;
 namespace MoreAlerts
 {
 
-    class Alert_AnimalHunting : Alert_Custom_Spawned
+    class Alert_AnimalHunting : Alert_Custom_Pawns
     {
-
-        public Alert_AnimalHunting()
+        static List<Func<List<Pawn>>> Potentials()
+        {
+            List<Func<List<Pawn>>> pots = new List<Func<List<Pawn>>>();
+            pots.Add(delegate { return PawnsFinder.AllMaps_Spawned; });
+            return pots;
+        }
+        public Alert_AnimalHunting() : base(Potentials())
         {
             this.defaultPriority = AlertPriority.Critical;
             this.defaultLabel = "animals hunting";
