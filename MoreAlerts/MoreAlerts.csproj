@@ -41,6 +41,7 @@
     <Compile Include="Alert_Building_Damaged.cs" />
     <Compile Include="Alert_MoralGuideAbility.cs" />
     <Compile Include="Alert_PrisonerBreakRisk.cs" />
+    <Compile Include="Alert_AnytimeFestivalReady.cs" />
     <Compile Include="Alert_UnusedResourcePermits.cs" />
     <Compile Include="Alert_WastingPsychicHelmet.cs" />
     <Compile Include="Alert_Custom.cs" />
