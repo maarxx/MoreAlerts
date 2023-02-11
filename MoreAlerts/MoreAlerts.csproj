@@ -39,6 +39,7 @@
     <Compile Include="Alert_FireWithoutRain.cs" />
     <Compile Include="Alert_FatalCondition.cs" />
     <Compile Include="Alert_Building_Damaged.cs" />
+    <Compile Include="Alert_MoralGuideAbility.cs" />
     <Compile Include="Alert_PrisonerBreakRisk.cs" />
     <Compile Include="Alert_UnusedResourcePermits.cs" />
     <Compile Include="Alert_WastingPsychicHelmet.cs" />
