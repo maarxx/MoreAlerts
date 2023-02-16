@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Alert_AnimalHunting.cs" />
+    <Compile Include="Alert_UntrashedQuestExpiring.cs" />
     <Compile Include="Alert_ForbiddenEmptyHydroponics.cs" />
     <Compile Include="Alert_ImmunityCondition.cs" />
     <Compile Include="Alert_GrowingZoneNotSowing.cs" />
