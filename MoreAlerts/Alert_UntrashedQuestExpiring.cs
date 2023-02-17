@@ -32,17 +32,17 @@ namespace MoreAlerts
             soonestExpiringQuestTicks = int.MaxValue;
             foreach (Quest q in Find.QuestManager.QuestsListForReading)
             {
-                int ticksRemaining;
-                if (!q.hiddenInUI
-                    && !q.dismissed
-                    && (q.State == QuestState.NotYetAccepted || q.State == QuestState.Ongoing)
-                    && ((ticksRemaining = QuestUtility.GetQuestTicksRemaining(q)) > 0))
+                if (!q.hiddenInUI && !q.dismissed)
                 {
-                    targetQuests.Add(q);
-                    if (ticksRemaining < soonestExpiringQuestTicks)
+                    int leastTicksRemaining = GetQuestTicksRemaining(q);
+                    if (leastTicksRemaining > 0)
                     {
-                        soonestExpiringQuestTicks = ticksRemaining;
-                        soonestExpiringQuest = q;
+                        targetQuests.Add(q);
+                        if (leastTicksRemaining < soonestExpiringQuestTicks)
+                        {
+                            soonestExpiringQuestTicks = leastTicksRemaining;
+                            soonestExpiringQuest = q;
+                        }
                     }
                 }
             }
@@ -70,9 +70,23 @@ namespace MoreAlerts
             stringBuilder.AppendLine();
             foreach (Quest q in this.targetQuests)
             {
-                stringBuilder.AppendLine("    " + q.name + " (" + QuestUtility.GetQuestTicksRemaining(q).ToStringTicksToPeriod() + ")");
+                stringBuilder.AppendLine("    " + q.name + " (" + GetQuestTicksRemaining(q).ToStringTicksToPeriod() + ")");
             }
             return stringBuilder.ToString().TrimEnd('\n');
+        }
+
+        public int GetQuestTicksRemaining(Quest q)
+        {
+            int leastTicksRemaining = 0;
+            if (q.State == QuestState.NotYetAccepted)
+            {
+                leastTicksRemaining = q.ticksUntilAcceptanceExpiry;
+            }
+            else if (q.State == QuestState.Ongoing)
+            {
+                leastTicksRemaining = QuestUtility.GetQuestTicksRemaining(q);
+            }
+            return leastTicksRemaining;
         }
     }
 }
