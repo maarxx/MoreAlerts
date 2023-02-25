@@ -130,6 +130,10 @@ This alert follows whether a pawn is suffering from negative thought about not b
 
 This alert follows whether you forgot to tell any Nudists that they can take off their clothes now because the emergency is over.
 
+### Untrashed Quest Expiring
+
+If you have any quests expiring (timer to accept or timer to fail), it will post an alert with the shortest one, mouseover for all of them. If you don't want it here, then trashcan the quest, you can still do it or whatever.
+
 ### Downed Foreigner
 
 Tracks downed pawns which are not your faction, everything from hostile raiders to traders to ally military aid. All people you want to either capture or rescue.
@@ -142,6 +146,10 @@ Lists how many tiles of fire are on the entire map (not just Home area), but onl
 
 If you ticked a Growing Zone to disallow Sowing, that was probably temporary. Reminds you, so that you don't forget and run out of food.
 
+### Forbidden Empty Hydroponics
+
+If you ticked a Hydroponics to disallow Sowing, and it becomes empty, it reminds you to turn it back on.
+
 ### Thing Unpowered
 
 This alert tracks whether a building on your map requires power and is currently unpowered. Good to know when your grid has been cut, or batteries/generators have run out.
@@ -153,6 +161,14 @@ Tracks that a pawn is wearing a Psychic Helmet, but there is no active event lik
 ### Unused Resource Permits
 
 Some Royalty Permits, like Steel Drop / Food Drop / Glittermed Drop / etc, are just free resources, and you want to use them as soon as they become available, every time, and not using them is just wasting them. Alerts you that one has come off cooldown.
+
+### Unused Morale Guide Ability
+
+If your Ideology's Morale Guide's ability is ready, show an alert to remind you to use it.
+
+### Anytime Festival Ready
+
+If you have an Ideology Festival with anytime start that is totally off cooldown and no diminishing return, post an alert to remind you to use it.
 
 # How to Install
 
