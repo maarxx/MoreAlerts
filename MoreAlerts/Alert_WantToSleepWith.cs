@@ -28,7 +28,7 @@ namespace MoreAlerts
             p.needs.mood.thoughts.GetAllMoodThoughts(thoughts);
             foreach (Thought t in thoughts)
             {
-                if (t is Thought_WantToSleepWithSpouseOrLover)
+                if (t.def.defName == "WantToSleepWithSpouseOrLover")
                 {
                     return true;
                 }
