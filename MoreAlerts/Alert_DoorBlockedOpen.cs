@@ -34,7 +34,11 @@ namespace MoreAlerts
                         if (b is Building_Door)
                         {
                             Building_Door bd = (Building_Door)b;
-                            if (!bd.WillCloseSoon && !bd.HoldOpen)
+                            if (bd.TryGetComp<DoorAlertInverterComp>().shouldInvertAlert)
+                            {
+                                // TODO
+                            }
+                            else if (!bd.WillCloseSoon && !bd.HoldOpen)
                             {
                                 this.affectedThings.Add(bd);
                             }
