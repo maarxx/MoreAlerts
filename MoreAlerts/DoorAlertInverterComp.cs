@@ -38,7 +38,7 @@ namespace MoreAlerts
                 command_Toggle2.defaultLabel = "Invert Door Alerts";
                 command_Toggle2.defaultDesc = "Invert the alerts on this door regarding held/blocked open. Use this on doors which should always be held/blocked open, and they will instead alert if they are shut.";
                 command_Toggle2.hotKey = null;
-                command_Toggle2.icon = DefDatabase<ThingDef>.GetNamed("Crown").uiIcon;
+                command_Toggle2.icon = TexCommand.HoldOpen;
                 command_Toggle2.isActive = (() => shouldInvertAlert);
                 command_Toggle2.toggleAction = delegate
                 {

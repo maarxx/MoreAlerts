@@ -7,13 +7,14 @@ using Verse;
 
 namespace MoreAlerts
 {
-    class Alert_DoorHeldOpen : Alert_Custom
+    class Alert_DoorClosed : Alert_Custom
     {
 
-        public Alert_DoorHeldOpen()
+        public Alert_DoorClosed()
         {
-            this.defaultLabel = "doors held open";
-            this.defaultExplanation = "Some doors are marked for Hold Open.";
+            this.defaultPriority = AlertPriority.High;
+            this.defaultLabel = "doors closed";
+            this.defaultExplanation = "Some doors are closed that should be open.";
         }
 
         protected override void GetAffectedThings()
@@ -33,11 +34,11 @@ namespace MoreAlerts
                         if (b is Building_Door)
                         {
                             Building_Door bd = (Building_Door)b;
-                            if (bd.TryGetComp<DoorAlertInverterComp>().shouldInvertAlert)
+                            if (!bd.TryGetComp<DoorAlertInverterComp>().shouldInvertAlert)
                             {
                                 // nothing/continue
                             }
-                            else if (bd.HoldOpen)
+                            else if (!bd.Open)
                             {
                                 this.affectedThings.Add(bd);
                             }
