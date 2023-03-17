@@ -52,7 +52,7 @@ namespace MoreAlerts
 
         protected override void considerToAddPawnWithMeta(Pawn p)
         {
-            if (p.HostileTo(Faction.OfPlayer))
+            if (p.HostileTo(Faction.OfPlayer) && !p.IsPrisonerOfColony)
             {
                 this.affectedThingsWithMeta.Add(new Thing_withMeta() {
                     thing = p,

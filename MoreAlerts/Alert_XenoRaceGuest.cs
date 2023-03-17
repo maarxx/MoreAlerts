@@ -18,7 +18,7 @@ namespace MoreAlerts
 
         public Alert_XenoRaceGuest() : base(Potentials())
         {
-            this.defaultPriority = AlertPriority.Critical;
+            this.defaultPriority = AlertPriority.High;
             this.defaultLabel = "guests";
             this.defaultExplanation = "There are guests! By xenotype or animal race: ";
         }
@@ -56,6 +56,7 @@ namespace MoreAlerts
             if (p.Faction != null
                 && p.Faction != Faction.OfPlayer
                 && !p.HostileTo(Faction.OfPlayer)
+                && !p.IsPrisonerOfColony
                 && (xenotype = p.genes?.Xenotype?.label) != null)
             {
                 this.affectedThingsWithMeta.Add(new Thing_withMeta() {
