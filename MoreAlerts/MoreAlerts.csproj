@@ -33,8 +33,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Alert_AnimalHunting.cs" />
     <Compile Include="Alert_DoorClosed.cs" />
+    <Compile Include="Alert_XenoRaceGuest.cs" />
+    <Compile Include="Alert_XenoRaceHostile.cs" />
     <Compile Include="Alert_UntrashedQuestExpiring.cs" />
     <Compile Include="Alert_ForbiddenEmptyHydroponics.cs" />
     <Compile Include="Alert_ImmunityCondition.cs" />
@@ -52,15 +53,12 @@
     <Compile Include="Alert_DoorHeldOpen.cs" />
     <Compile Include="Alert_BleedDeath.cs" />
     <Compile Include="Alert_MaybeCritical.cs" />
-    <Compile Include="Alert_Insects.cs" />
-    <Compile Include="Alert_Mechanoids.cs" />
     <Compile Include="Alert_NotInteractingPrisoner.cs" />
     <Compile Include="Alert_PawnCold.cs" />
     <Compile Include="Alert_PawnHot.cs" />
     <Compile Include="Alert_PawnRestricted.cs" />
     <Compile Include="Alert_Predator.cs" />
     <Compile Include="Alert_PrisonerEscaping.cs" />
-    <Compile Include="Alert_Raider.cs" />
     <Compile Include="Alert_Raider_Rocket.cs" />
     <Compile Include="Alert_RestingBreakRisk.cs" />
     <Compile Include="Alert_RestUntilHealed.cs" />
@@ -69,7 +67,6 @@
     <Compile Include="Alert_ConstrainingClothes.cs" />
     <Compile Include="Alert_WantToSleepWith.cs" />
     <Compile Include="Alert_Thing_Unpowered.cs" />
-    <Compile Include="Alert_HostileNonHostiles.cs" />
     <Compile Include="Alert_DownedForeigners.cs" />
     <Compile Include="Alert_Custom_withMeta.cs" />
     <Compile Include="Alert_Custom_Pawns.cs" />

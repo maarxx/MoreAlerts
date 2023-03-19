@@ -25,7 +25,7 @@ namespace MoreAlerts
         protected override void GetAffectedThings()
         {
             int curTick = Find.TickManager.TicksGame;
-            if (lastTick + 10 > curTick)
+            if (lastTick + 250 > curTick)
             {
                 return;
             }
