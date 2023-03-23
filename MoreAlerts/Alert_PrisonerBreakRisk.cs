@@ -28,7 +28,7 @@ namespace MoreAlerts
             if (p.needs.mood.CurLevel < p.mindState.mentalBreaker.BreakThresholdExtreme ||
                 p.needs.mood.CurInstantLevel < p.mindState.mentalBreaker.BreakThresholdExtreme)
             {
-                if (pawnCanMove(p))
+                if (prisonerIsDangerousBreak(p))
                 {
                     return true;
                 }
@@ -36,11 +36,12 @@ namespace MoreAlerts
             return false;
         }
 
-        private bool pawnCanMove(Pawn p)
+        private bool prisonerIsDangerousBreak(Pawn p)
         {
             return p.health.capacities.CanBeAwake
                    && p.health.capacities.CapableOf(PawnCapacityDefOf.Moving)
-                   && !p.health.InPainShock;
+                   && !p.health.InPainShock
+                   && PrisonBreakUtility.CanParticipateInPrisonBreak(p);
         }
     }
 }
