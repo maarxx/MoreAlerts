@@ -2,23 +2,30 @@
 
 This is a mod for the game RimWorld by Ludeon Studios.
 
-It offers more Alerts in the righthand sidebar that players might be interested in.
+The mod offers more Alerts in the righthand sidebar that players might be interested in.
 
 We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
 
 # Table of Contents
 
-* [Introduction and Explanation](#introduction-and-explanation)
+* [Introduction](#introduction)
+* [Explanation](#explanation)
 
-# Introduction and Explanation
+# Introduction
 
-You'll add the mod. You'll enable the mod. It will immediately start working.
+The mod offers more Alerts in the righthand sidebar that players might be interested in.
 
-There is no interface or configuration options. If you don't like it, turn the mod off again.
+# Explanation
 
 The mod provides more alerts, which are those lines on the right-hand side like "Minor break risk" or "Major break risk" or "Colonist needs rescue" or "Tattered clothing" or "Unhappy nudity".
 
 Some of the new alerts include:
+
+### Door Held Open
+### Door Blocked Open
+### Door Closed
+
+The mod offers a Gizmo onto doors which allows you to set whether the door should normally be open or closed during routine base work time. Then, the mod will throw an alert if the door is in any other state, like if a dropped item blocked a door open, or if you held it open during combat and forgot to close it again.
 
 ### Pawns are Hot
 ### Pawns are Cold
@@ -30,22 +37,11 @@ These alerts literally follow whether the pawn's current instantaneous temperatu
 
 These alerts follow the moodlet / thought, so this will persist as long as the moodlet / thought persists, which means it might linger for a little while longer after you fix the issue.
 
-### Door Held Open
-### Door Blocked Open
-
-These are two separate alerts, which, respectively, keep track of Doors which are marked as "Hold Open", and doors which are blocked open, probably because somebody dropped an item in the doorway.
-
 ### Pawn is Restricted
 
 This alert follows whether the Pawn's current Allowed Area is something other than "Unrestricted".
 
 It also ignores zones named "Joy" or "ToxicH" for compatibility with my other mod [SmarterScheduling](https://github.com/maarxx/SmarterScheduling).
-
-### Animal Hunting
-
-This alert follows whether a wild animal is hunting one of your faction members (human or animal), either because it is a hungry predator or because it has gone manhunter.
-
-During manhunter events, it also conveniently tells you exactly how many manhunter animals are left.
 
 ### Predator
 
@@ -53,25 +49,13 @@ This alert just tracks the total number of predators on your map, even if they h
 
 It is useful for preemptively exterminating them.
 
-### Mechanoids
-
-This alert follows whether there are any mechanoids on your map, and exactly how many.
-
-## Insects
-
-This alert follows whether there are any insects on your map, and exactly how many.
-
-### Raiders
-
-This alert follows whether there are any hostile humanoid raiders on your map, and exactly how many.
-
 ### Rockets
 
 This alert follows whether there are any hostile humanoids with rocket launchers (or prisoners, oops), and exactly how many.
 
-### Hostile Non-Hostiles
+### Downed Foreigner
 
-This alert follows whether there are hostile things on your map that aren't normally a hostile faction. Tracks everything affected by Berserk or Neuroquake, etc, regardless of faction.
+Tracks downed pawns which are not your faction, everything from hostile raiders to traders to ally military aid. All people you want to either capture or rescue.
 
 ### Escaping Prisoners
 
@@ -130,10 +114,6 @@ This alert follows whether you forgot to tell any Nudists that they can take off
 ### Untrashed Quest Expiring
 
 If you have any quests expiring (timer to accept or timer to fail), it will post an alert with the shortest one, mouseover for all of them. If you don't want it here, then trashcan the quest, you can still do it or whatever.
-
-### Downed Foreigner
-
-Tracks downed pawns which are not your faction, everything from hostile raiders to traders to ally military aid. All people you want to either capture or rescue.
 
 ### Fire Without Rain
 
