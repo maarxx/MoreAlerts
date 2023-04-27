@@ -3,7 +3,9 @@
   <name>MoreAlerts</name>
   <author>Maarx</author>
   <url>https://github.com/maarxx/MoreAlerts/</url>
-  <description>Offers more Alerts in the righthand sidebar that players might be interested in.</description>
+  <description>
+The mod offers more Alerts in the righthand sidebar that players might be interested in.
+  </description>
   <packageId>maarx.morealerts</packageId>
   <supportedVersions>
     <li>1.2</li>
