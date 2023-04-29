@@ -21,6 +21,12 @@ The mod provides more alerts, which are those lines on the right-hand side like 
 
 Some of the new alerts include:
 
+### All Non-Controlled Races or Xenotypes
+
+If there are any hostile enemies or neutral guests on your map, a pair of alerts (red for hostile) for list all of the races or xenotypes, so it'll say like:
+
+11 neanderthals 6 boars 5 spelopedes 4 lancers 3 hussars 1 highmate
+
 ### Door Held Open
 ### Door Blocked Open
 ### Door Closed
