@@ -4,8 +4,6 @@ This is a mod for the game RimWorld by Ludeon Studios.
 
 The mod offers more Alerts in the righthand sidebar that players might be interested in.
 
-We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
-
 # Table of Contents
 
 * [Introduction](#introduction)
