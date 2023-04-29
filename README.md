@@ -9,11 +9,20 @@ We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=232452751
 # Table of Contents
 
 * [Introduction](#introduction)
+* [Links](#links)
 * [Explanation](#explanation)
 
 # Introduction
 
 The mod offers more Alerts in the righthand sidebar that players might be interested in.
+
+# Links
+
+We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
+
+We're on GitHub: https://github.com/maarxx/MoreAlerts
+
+For reporting bugs or requesting features, Github Issues are better than Steam Workshop Comments.
 
 # Explanation
 
