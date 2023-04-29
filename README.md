@@ -4,22 +4,35 @@ This is a mod for the game RimWorld by Ludeon Studios.
 
 The mod offers more Alerts in the righthand sidebar that players might be interested in.
 
-We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
-
 # Table of Contents
 
 * [Introduction](#introduction)
+* [Links](#links)
 * [Explanation](#explanation)
 
 # Introduction
 
 The mod offers more Alerts in the righthand sidebar that players might be interested in.
 
+# Links
+
+We're on Steam: https://steamcommunity.com/sharedfiles/filedetails/?id=2324527518
+
+We're on GitHub: https://github.com/maarxx/MoreAlerts
+
+For reporting bugs or requesting features, Github Issues are better than Steam Workshop Comments.
+
 # Explanation
 
 The mod provides more alerts, which are those lines on the right-hand side like "Minor break risk" or "Major break risk" or "Colonist needs rescue" or "Tattered clothing" or "Unhappy nudity".
 
 Some of the new alerts include:
+
+### All Non-Controlled Races or Xenotypes
+
+If there are any hostile enemies or neutral guests on your map, a pair of alerts (red for hostile) for list all of the races or xenotypes, so it'll say like:
+
+11 neanderthals 6 boars 5 spelopedes 4 lancers 3 hussars 1 highmate
 
 ### Door Held Open
 ### Door Blocked Open
